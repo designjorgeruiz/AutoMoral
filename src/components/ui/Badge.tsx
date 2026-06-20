@@ -1,14 +1,15 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Tone = "accent" | "steel" | "success" | "new" | "used" | "neutral";
+type Tone = "accent" | "steel" | "success" | "new" | "used" | "featured" | "neutral";
 
 const TONES: Record<Tone, string> = {
   accent: "bg-accent/15 text-accent border-accent/30",
   steel: "bg-white/8 text-steel border-white/15",
   success: "bg-success/15 text-success border-success/30",
   new: "bg-accent text-white border-transparent",
-  used: "bg-white/10 text-steel border-white/15",
+  used: "bg-black/60 backdrop-blur-sm text-white border-white/20",
+  featured: "bg-white/90 backdrop-blur-sm text-accent border-transparent",
   neutral: "bg-surface-2 text-muted border-border-base",
 };
 

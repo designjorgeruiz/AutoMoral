@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Vehicle } from "@/lib/types";
-import { Badge } from "@/components/ui/Badge";
-import { CalendarIcon, GaugeIcon, GearIcon, CheckIcon, ArrowRightIcon } from "@/components/icons";
+import { CalendarIcon, GaugeIcon, GearIcon, CheckIcon, ArrowRightIcon, StarIcon } from "@/components/icons";
 import { formatMileage, formatPrice, formatYear, cn } from "@/lib/utils";
 import { useCompare } from "@/components/compare/CompareContext";
 
@@ -25,15 +24,28 @@ export function VehicleCard({ vehicle, priority = false }: { vehicle: Vehicle; p
             priority={priority}
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
-            <Badge tone={vehicle.condition === "Nuevo" ? "new" : "used"}>
-              {vehicle.condition}
-            </Badge>
-            {vehicle.featured && <Badge tone="accent">Destacado</Badge>}
-            {vehicle.recent && !vehicle.featured && <Badge tone="steel">Reciente</Badge>}
-          </div>
         </div>
       </Link>
+
+      {/* Info bar */}
+      <div className="flex items-center justify-between border-t border-border-soft bg-surface-2/50 px-4 py-2">
+        <span className={cn(
+          "text-[11px] font-semibold uppercase tracking-[0.12em]",
+          vehicle.condition === "Nuevo" ? "text-accent" : "text-muted"
+        )}>
+          {vehicle.condition}
+        </span>
+        {vehicle.featured && (
+          <span className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-accent">
+            <StarIcon className="h-3 w-3" /> Destacado
+          </span>
+        )}
+        {vehicle.recent && !vehicle.featured && (
+          <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-steel-dim">
+            Reciente
+          </span>
+        )}
+      </div>
 
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
