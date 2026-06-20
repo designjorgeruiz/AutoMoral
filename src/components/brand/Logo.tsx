@@ -32,7 +32,7 @@ export function Logo({
   priority = false,
 }: LogoProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span className={cn("inline-flex items-center gap-2", className)}>
       <Image
         src={EMBLEM.src}
         alt="Auto Moral MX"
@@ -48,7 +48,7 @@ export function Logo({
           width={WORDMARK.w}
           height={WORDMARK.h}
           priority={priority}
-          className={cn("h-[15px] w-auto", wordmarkClassName)}
+          className={cn("h-[18px] w-auto", wordmarkClassName)}
         />
       )}
     </span>

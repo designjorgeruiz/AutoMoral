@@ -35,7 +35,7 @@ export function Header() {
       >
         <div className="am-container flex h-16 items-center justify-between md:h-18">
           <Link href="/" aria-label="Auto Moral MX — Inicio" className="shrink-0 py-2">
-            <Logo priority wordmarkClassName="hidden sm:block" />
+            <Logo priority />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Principal">
@@ -70,9 +70,6 @@ export function Header() {
                 WhatsApp
               </LinkButton>
             </div>
-            <LinkButton href="/vende-tu-auto" size="sm">
-              Publica tu auto
-            </LinkButton>
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
