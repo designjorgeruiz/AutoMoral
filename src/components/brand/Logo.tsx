@@ -18,6 +18,8 @@ interface LogoProps {
   withWordmark?: boolean;
   className?: string;
   emblemClassName?: string;
+  /** Clases extra para el wordmark (ej. ocultarlo en móvil). */
+  wordmarkClassName?: string;
   /** Carga prioritaria (úsalo en el header above-the-fold). */
   priority?: boolean;
 }
@@ -26,6 +28,7 @@ export function Logo({
   withWordmark = true,
   className,
   emblemClassName,
+  wordmarkClassName,
   priority = false,
 }: LogoProps) {
   return (
@@ -45,7 +48,7 @@ export function Logo({
           width={WORDMARK.w}
           height={WORDMARK.h}
           priority={priority}
-          className="h-[15px] w-auto"
+          className={cn("h-[15px] w-auto", wordmarkClassName)}
         />
       )}
     </span>
