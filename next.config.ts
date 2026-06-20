@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./src/lib/imageLoader.ts",
     remotePatterns: [
       { protocol: "https", hostname: "**" },
     ],
