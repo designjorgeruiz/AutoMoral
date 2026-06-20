@@ -129,7 +129,7 @@ export function VehicleSearchBar({ compact = false }: { compact?: boolean }) {
         <div className="col-span-2 flex items-end lg:col-span-1">
           <button
             type="submit"
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-accent/70 backdrop-blur-md border border-accent/50 px-5 font-semibold text-white transition-all hover:bg-accent/85 hover:border-accent/70 shadow-[0_8px_28px_-8px_rgba(28,142,240,0.55),inset_0_1px_0_rgba(255,255,255,0.22)] lg:w-auto"
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-accent/25 bg-accent/10 px-5 font-semibold text-accent backdrop-blur-md transition-all hover:border-accent/60 hover:bg-accent/80 hover:text-white hover:shadow-[0_8px_28px_-8px_rgba(28,142,240,0.55),inset_0_1px_0_rgba(255,255,255,0.22)] focus-visible:border-accent/60 focus-visible:bg-accent/80 focus-visible:text-white active:bg-accent lg:w-auto"
           >
             <SearchIcon className="h-4 w-4" />
             Buscar
