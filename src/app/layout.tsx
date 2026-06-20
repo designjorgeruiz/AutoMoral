@@ -63,8 +63,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es-MX" className={`${inter.variable} ${manrope.variable}`}>
-      <body className="min-h-dvh antialiased">
+    <html lang="es-MX" className={`${inter.variable} ${manrope.variable}`} suppressHydrationWarning>
+      <body className="min-h-dvh antialiased" suppressHydrationWarning>
         <JsonLd data={autoDealerSchema} />
         <CompareProvider>
           <Header />
