@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Foto del vehículo (placeholder)">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#192230"/>
+      <stop offset="100%" stop-color="#0b1017"/>
+    </linearGradient>
+    <radialGradient id="spot3" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#3aa4f5" stop-opacity="0.14"/>
+      <stop offset="70%" stop-color="#3aa4f5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <rect width="800" height="600" fill="url(#spot3)"/>
+  <g fill="none" stroke="#5f6b7a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <path d="M150 358 q26 -96 130 -104 l150 -4 q80 4 126 56 l60 58 76 14 q32 6 32 40 v22 h-42"/>
+    <path d="M150 358 h-24 v42 q0 14 14 14 h38"/>
+    <path d="M296 428 h228"/>
+    <circle cx="254" cy="428" r="42"/>
+    <circle cx="562" cy="428" r="42"/>
+    <path d="M306 258 l26 62 196 0 28 28"/>
+  </g>
+  <text x="400" y="505" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="26" letter-spacing="3" fill="#76808f">FOTO DEL VEHÍCULO</text>
+  <text x="400" y="537" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" letter-spacing="1" fill="#4c5663">Reemplazar en /public/vehicles/</text>
+</svg>

@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/*
+  =========================================================================
+  AUTO MORAL MX — Design tokens
+  -------------------------------------------------------------------------
+  Paleta dark premium inspirada en la identidad de marca:
+  acero/plata + acento azul eléctrico (gota del logo).
+  Cambia los valores aquí para re-tematizar todo el sitio.
+  =========================================================================
+*/
+:root {
+  /* Base / superficies */
+  --am-bg: #0a0d12;            /* fondo principal (casi negro azulado) */
+  --am-bg-soft: #0e131b;       /* fondo de secciones alternas */
+  --am-surface: #141a24;       /* tarjetas */
+  --am-surface-2: #1b222e;     /* tarjetas elevadas / inputs */
+  --am-border: #283242;        /* bordes sutiles */
+  --am-border-soft: #1d2632;
+
+  /* Texto */
+  --am-fg: #f4f6fa;            /* texto principal */
+  --am-fg-muted: #aeb7c5;      /* texto secundario */
+  --am-fg-subtle: #76808f;     /* texto terciario / labels */
+
+  /* Marca */
+  --am-accent: #1c8ef0;        /* azul eléctrico (acento principal) */
+  --am-accent-strong: #0f6fd0; /* azul presionado/hover */
+  --am-accent-soft: #1c8ef022; /* fondo azul translúcido */
+  --am-steel: #c7ced8;         /* plata / acero del logotipo */
+  --am-steel-dim: #8c97a6;
+
+  /* Estados */
+  --am-success: #2fbf71;
+  --am-warning: #f0a83c;
+
+  /* Radios y sombras */
+  --am-radius: 0.85rem;
+  --am-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+  --am-ring: 0 0 0 3px rgba(28, 142, 240, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--am-bg);
+  --color-background-soft: var(--am-bg-soft);
+  --color-surface: var(--am-surface);
+  --color-surface-2: var(--am-surface-2);
+  --color-border-base: var(--am-border);
+  --color-border-soft: var(--am-border-soft);
+
+  --color-foreground: var(--am-fg);
+  --color-muted: var(--am-fg-muted);
+  --color-subtle: var(--am-fg-subtle);
+
+  --color-accent: var(--am-accent);
+  --color-accent-strong: var(--am-accent-strong);
+  --color-steel: var(--am-steel);
+  --color-steel-dim: var(--am-steel-dim);
+  --color-success: var(--am-success);
+
+  --radius-base: var(--am-radius);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+}
+
+* {
+  border-color: var(--am-border-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--am-bg);
+  color: var(--am-fg);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tipografía de títulos */
+h1, h2, h3, h4 {
+  font-family: var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Focus accesible y consistente */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--am-ring);
+  border-radius: 6px;
+}
+
+/* Utilidades de marca reutilizables */
+@layer utilities {
+  .am-container {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .am-container { padding-inline: 2rem; }
+  }
+
+  /* Texto con degradado acero -> plata como el logotipo */
+  .am-steel-text {
+    background: linear-gradient(180deg, #ffffff 0%, #c7ced8 45%, #8c97a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .am-accent-text {
+    color: var(--am-accent);
+  }
+
+  /* Halo azul sutil de fondo (estilo "spotlight" del hero) */
+  .am-glow {
+    background:
+      radial-gradient(60% 60% at 50% 0%, rgba(28, 142, 240, 0.16) 0%, transparent 70%);
+  }
+
+  .am-card {
+    background-color: var(--am-surface);
+    border: 1px solid var(--am-border);
+    border-radius: var(--am-radius);
+  }
+
+  .am-hairline {
+    border-top: 1px solid var(--am-border);
+  }
+
+  /* Oculta scrollbar en carruseles manteniendo el scroll */
+  .am-no-scrollbar::-webkit-scrollbar { display: none; }
+  .am-no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Animaciones de entrada suaves */
+@keyframes am-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.am-fade-up {
+  animation: am-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; scroll-behavior: auto !important; }
+}
