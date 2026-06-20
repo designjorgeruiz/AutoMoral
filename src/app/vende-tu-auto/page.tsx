@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/layout/PageHero";
 import { SellCarForm } from "@/components/forms/SellCarForm";
 import { LinkButton } from "@/components/ui/Button";
@@ -38,6 +39,22 @@ export default function VendeTuAutoPage() {
       <section className="py-14 md:py-20">
         <div className="am-container grid gap-12 lg:grid-cols-2">
           <div>
+            <figure className="mb-10 overflow-hidden rounded-2xl border border-border-base bg-surface">
+              <div className="relative aspect-[3/2] w-full">
+                <Image
+                  src="/brand/equipo-automoral.png"
+                  alt="Equipo de Auto Moral MX en showroom"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="border-t border-border-soft px-5 py-4 text-sm text-muted">
+                <span className="font-semibold text-foreground">Trato directo y personal.</span>{" "}
+                Te acompañamos en cada paso de la venta, con atención cara a cara y total transparencia.
+              </figcaption>
+            </figure>
+
             <h2 className="text-2xl font-bold">¿Por qué vender con nosotros?</h2>
             <ul className="mt-6 space-y-3">
               {BENEFITS.map((b) => (
