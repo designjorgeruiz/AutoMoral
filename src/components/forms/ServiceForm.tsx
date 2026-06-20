@@ -4,13 +4,12 @@ import { MockForm } from "./MockForm";
 import { TextField, SelectField, TextAreaField } from "@/components/ui/Field";
 
 const SERVICE_TYPES = [
+  "Mecánica general",
+  "Laminería y pintura",
+  "Restauración",
+  "Piezas de colisión",
   "Diagnóstico",
-  "Mantenimiento preventivo",
-  "Afinación",
-  "Frenos",
-  "Suspensión",
-  "Motor",
-  "Sistema eléctrico",
+  "Direcciones asistidas",
   "Otro",
 ];
 
