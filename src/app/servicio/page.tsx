@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/layout/PageHero";
 import { ServiceForm } from "@/components/forms/ServiceForm";
 import { ServiceGlyph } from "@/components/icons";
@@ -31,6 +32,22 @@ export default function ServicioPage() {
       <section className="py-14 md:py-20">
         <div className="am-container grid gap-12 lg:grid-cols-2">
           <div>
+            <figure className="mb-10 overflow-hidden rounded-2xl border border-border-base bg-surface">
+              <div className="relative aspect-[3/2] w-full">
+                <Image
+                  src="/brand/taller-automoral.png"
+                  alt="Mecánico de Auto Moral MX trabajando en el taller"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="border-t border-border-soft px-5 py-4 text-sm text-muted">
+                <span className="font-semibold text-foreground">Taller propio y personal capacitado.</span>{" "}
+                Diagnóstico honesto y reparaciones con refacciones de calidad, en nuestras instalaciones.
+              </figcaption>
+            </figure>
+
             <h2 className="text-2xl font-bold">Qué hacemos</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {SERVICES.map((s) => (
